@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    background-color: #c2c2c2;
+}
+
+.container__caixa{
+    height: 100vh;
+    background-color: black;
+}
+
+.caixa__lista{
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.lista__titulo{
+    height: 10rem;
+    background-color: azure;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.lista__botoes{
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;   
+}
+
+.botoes__links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: azure;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    height: 2rem;
+}
+
+.lista__rodape{
+    margin-top: 71vh;
+}
+
+.body_login{
+    background-color: #2C2C2C;
+}
+
+.alertas{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    height: 3rem;
+    width: 30rem;
+    font-family: "Poppins", sans-serif;
+    margin: 2rem 29.5rem;
+    border-radius: 5px;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2C2C2C
+}
+
+.login__form{
+    height: 70%;
+    width: 35%;
+    background-color: #c2c2c2;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login__titulo{
+    text-align: center;
+    margin: 0 0 3rem 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.login__fields{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fields__campos{
+    font-family: "Poppins", sans-serif;
+    margin: 0.5rem 1.5rem;
+}
+
+.form-control{
+    border-radius: 5px;
+    border-color: transparent;
+    height: 2em;
+    width: 90%;
+    margin: 0 1.5rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.login__btn{
+    height: 2.5rem;
+    margin: 2rem 2rem;
+    background-color: rgb(17, 172, 0);
+    color: azure;
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login__btn:hover{
+    background-color: rgb(0, 190, 0);
+    color: black;
+}
+
+.botoes__links:hover{
+    background-color: #2C2C2C;
+}

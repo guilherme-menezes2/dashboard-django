@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Tarefa</title>
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+</head>
+<body class="body_login">
+    {% for message in messages %}
+            <div class="alertas">
+                {{ message }}
+            </div>
+    {% endfor %}
+    <main class="login">
+        <form action="{% url 'nova_tarefa' %}" method="POST" class="login__form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <H1 class="login__titulo">Cadastro Tarefa</H1>
+            <div>
+            {% for field in form.visible_fields %}
+                <div class="login__fields" style="width: 95%; margin-left: 13px;">
+                    <label for="{{ field.id_for_label }}" class="fields__campos">{{field.label}}</label>
+                    {{field}}
+                </div>
+            </div>
+            {% endfor %}
+            <input type="submit" value="Acessar" class="login__btn">
+        </form>
+    </main>
+</body>
+</html>

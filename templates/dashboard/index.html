@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+</head>
+<body>
+    <main class="container">
+        <section class="container__caixa">
+            <div class="caixa__lista">
+                <h1 class="lista__titulo">Guilherme</h1>
+                <ul class="lista__botoes">
+                    <a href="{% url 'index' %}" class="botoes__links">Home</a>
+                    <a href="{% url 'tarefas' %}" class="botoes__links">Tarefas</a>
+                    <a href="{% url 'tempo'  %}" class="botoes__links">Tempo</a>
+                </ul>
+                <ul class="lista__rodape">
+                    <a href="{% url 'logout' %}" class="botoes__links">Logout</a>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

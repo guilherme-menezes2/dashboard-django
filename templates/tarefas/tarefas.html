@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+    <link rel="stylesheet" href="{% static '/styles/style3.css' %}">
+</head>
+<body class="body_tarefas">
+    {% for message in messages %}
+        <div class="alertas">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <main class="container">
+        <section class="container__caixa">
+            <div class="caixa__lista">
+                <h1 class="lista__titulo">Guilherme</h1>
+                <ul class="lista__botoes">
+                    <a href="{% url 'index' %}" class="botoes__links">Home</a>
+                    <a href="{% url 'tarefas' %}" class="botoes__links">Tarefas</a>
+                    <a href="{% url 'tempo'  %}" class="botoes__links">Tempo</a>
+                </ul>
+                <ul class="lista__rodape">
+                    <a href="{% url 'logout' %}" class="botoes__links">Logout</a>
+                </ul>
+            </div>
+        </section>
+        <section class="container__conteudo">
+            <div class="conteudo__box">
+                <li class="box__lifunc">
+                    <a href="{% url 'nova_tarefa' %}" class="box__buttonnew">Cadastrar Nova Tarefa</a>
+                    <form action="{% url 'filtro_tarefa' %}" class="box__form">
+                        <input type="date" class="box__datefilter" name="start_date">
+                        <button type="submit" class="box__filterbtn">Filtrar</button>
+                    </form>
+                </li>
+                <ul class="box__lista">
+                    {% if cards %}
+                    {% for tarefa in cards %}
+                    <li class="lista__tarefas">
+                        <a href="{% url 'finalizar_tarefa' tarefa.id %}" class="tarefas__btncomplete"></a>
+                        <div class="tarefas__info">
+                            <p class="tarefas__nome">{{ tarefa.nome }}</p>
+                            <p class="tarefas__data">{{ tarefa.data_tarefa }}</p>
+                        </div>
+                        <a href="{% url 'deletar_tarefa' tarefa.id %}" class="tarefas__btndel"></a>
+                    </li>
+                    {% endfor %}
+                    {% else %}
+                        <div class="lista__notfound">
+                            <p>Nenhuma tarefa cadastrada!</p>
+                        </div>
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo</title>
+    <link rel="stylesheet" href="{% static '/styles/style2.css' %}">
+    <script src="{% static '/scripts/main.js' %}"></script>
+</head>
+<body>
+    <main class="container">
+        <section class="container__caixa">
+            <div class="caixa__lista">
+                <h1 class="lista__titulo">Guilherme</h1>
+                <ul class="lista__botoes">
+                    <a href="{% url 'index' %}" class="botoes__links">Home</a>
+                    <a href="{% url 'tarefas' %}" class="botoes__links">Tarefas</a>
+                    <a href="{% url 'tempo'  %}" class="botoes__links">Tempo</a>
+                </ul>
+                <ul class="lista__rodape">
+                    <a href="{% url 'logout' %}" class="botoes__links">Logout</a>
+                </ul>
+            </div>
+        </section>
+        <section class="container__conteudo">
+            <div class="conteudo__box">
+                <li class="box__busca">
+                    <input type="text" placeholder="Digite o nome da cidade" class="box__search">
+                    <button class="box__btn" onclick="buttonClick()">Buscar</button>
+                </li>
+                <h1 class="box__titulo">Cidade</h1>
+                <li class="box__info">
+                    <h2 class="info__temp">°C</h2>
+                    <li class="info__imgs">
+                        <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="icone" class="info__img"><p class="info__condicao"></p>
+                    </li>
+                    <p class="info__umid">Umidade: %</p>
+                </li>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
